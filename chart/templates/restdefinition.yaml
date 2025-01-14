@@ -1,0 +1,36 @@
+kind: RestDefinition
+apiVersion: swaggergen.krateo.io/v1alpha1
+metadata:
+  name: {{ include "azure-pricing-rest-dynamic-controller-plugin.fullname" . }}
+  labels:
+  {{- include "azure-pricing-rest-dynamic-controller-plugin.labels" . | nindent 4 }}
+spec: 
+  oasPath: configmap://"{{ .Release.Namespace }}"/{{ include "azure-pricing-rest-dynamic-controller-plugin.fullname" . }}-openapi/schema.yaml
+  resourceGroup: finops.krateo.io
+  resource: 
+    kind: DataPresentationAzure
+    identifiers:
+    - currencyCode
+    - tierMinimumUnits
+    - retailPrice
+    - unitPrice
+    - armRegionName
+    - location
+    - effectiveStartDate
+    - meterId
+    - meterName
+    - productId
+    - skuId
+    - productName
+    - skuName
+    - serviceName
+    - serviceId
+    - serviceFamily
+    - unitOfMeasure
+    - type
+    - isPrimaryMeterRegion
+    - armSkuName
+    verbsDescription:
+    - action: get
+      method: GET
+      path: /prices

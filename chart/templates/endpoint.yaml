@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Secret
+type: Opaque
+metadata:
+  name: {{ include "azure-pricing-rest-dynamic-controller-plugin.fullname" . }}-endpoint
+stringData:
+  server-url: http://{{ include "azure-pricing-rest-dynamic-controller-plugin.fullname" . }}.{{ .Release.Namespace }}.svc:{{ .Values.service.port }}
+  insecure: "true"
