@@ -5,7 +5,7 @@ metadata:
   labels:
   {{- include "azure-pricing-rest-dynamic-controller-plugin.labels" . | nindent 4 }}
 spec: 
-  oasPath: configmap://"{{ .Release.Namespace }}"/{{ include "azure-pricing-rest-dynamic-controller-plugin.fullname" . }}-openapi/schema.yaml
+  oasPath: configmap://{{ .Release.Namespace }}/{{ include "azure-pricing-rest-dynamic-controller-plugin.fullname" . }}-openapi/schema.yaml
   resourceGroup: finops.krateo.io
   resource: 
     kind: DataPresentationAzure
