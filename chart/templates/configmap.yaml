@@ -24,7 +24,7 @@ data:
       version: '1.0.0'
       description: API for retrieving Azure retail pricing information
     servers:
-      - url: http://azure-pricing-rest-dynamic-controller-plugin.finops:8100/api/retail
+      - url: http://{{ .Values.env.HOST_PLUGIN }}.{{ .Release.Namespace }}:{{ .Values.service.port }}/api/retail
     paths:
       /prices:
         get:
