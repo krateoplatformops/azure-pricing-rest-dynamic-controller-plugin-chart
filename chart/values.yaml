@@ -126,3 +126,4 @@ affinity: {}
 
 env: 
   AZURE_API: https://prices.azure.com:443
+  HOST_PLUGIN: azure-pricing-rest-dynamic-controller-plugin
