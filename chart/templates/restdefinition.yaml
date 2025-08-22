@@ -1,5 +1,5 @@
 kind: RestDefinition
-apiVersion: swaggergen.krateo.io/v1alpha1
+apiVersion: ogen.krateo.io/v1alpha1
 metadata:
   name: {{ include "azure-pricing-rest-dynamic-controller-plugin.fullname" . }}
   labels:
@@ -9,7 +9,9 @@ spec:
   resourceGroup: finops.krateo.io
   resource: 
     kind: DataPresentationAzure
-    identifiers:
+    identifiers: # identifiers only
+    - skuId
+    additionalStatusFields: # other variables in the status
     - currencyCode
     - tierMinimumUnits
     - retailPrice
@@ -20,7 +22,6 @@ spec:
     - meterId
     - meterName
     - productId
-    - skuId
     - productName
     - skuName
     - serviceName
