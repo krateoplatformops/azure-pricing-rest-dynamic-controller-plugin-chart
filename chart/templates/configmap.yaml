@@ -19,10 +19,10 @@ metadata:
 data:
   schema.yaml: |
     openapi: 3.0.0
-      info:
-        title: Azure Retail Prices API
-        version: '1.0.0'
-        description: API for retrieving Azure retail pricing information
+    info:
+      title: Azure Retail Prices API
+      version: '1.0.0'
+      description: API for retrieving Azure retail pricing information
     servers:
       - url: http://{{ .Values.env.HOST_PLUGIN }}.{{ .Release.Namespace }}:{{ .Values.service.port }}/api/retail
     paths:
